@@ -1,4 +1,4 @@
-# java-project Task -1
+# java-project Task -1. ATM INTERFACE
 
 import java.util.Scanner;
 
@@ -130,3 +130,96 @@ class ATM {
         System.out.println("-----------------------------");
     }
 }
+
+
+
+
+#TASK-2 ELECTRICITY BILL MANAGEMENT SYSTEM 
+
+import java.util.Scanner;
+
+public class ElectricityBillManagement {
+
+    public static void main(String[] args) {
+        // Create Scanner object for input
+        Scanner scanner = new Scanner(System.in);
+        
+        // Input for user details
+        System.out.print("Enter the customer name: ");
+        String customerName = scanner.nextLine();
+        
+        System.out.print("Enter the number of units consumed: ");
+        double unitsConsumed = scanner.nextDouble();
+        
+        // Calculate bill based on units consumed
+        double ratePerUnit = 5.0; // Example rate per unit
+        double billAmount = unitsConsumed * ratePerUnit;
+        
+        // Display the bill
+        System.out.println("\nElectricity Bill for " + customerName);
+        System.out.println("Units Consumed: " + unitsConsumed);
+        System.out.println("Rate per Unit: " + ratePerUnit);
+        System.out.println("Total Bill Amount: " + billAmount);
+        
+        scanner.close(); // Close the scanner
+    }
+}
+
+
+
+
+
+
+#TASK-3 DEVELOP A CURRENCY CONVERTER 
+
+
+import java.util.Scanner;
+
+public class CurrencyConverter {
+
+    public static void main(String[] args) {
+        // Create Scanner object for input
+        Scanner scanner = new Scanner(System.in);
+
+        // Predefined exchange rates
+        double usdToEur = 0.85;
+        double usdToGbp = 0.75;
+        double usdToInr = 74.0;
+        
+        System.out.println("Welcome to the Currency Converter!");
+        System.out.print("Enter the amount in USD: ");
+        double amountInUSD = scanner.nextDouble();
+        
+        System.out.println("Select the target currency:");
+        System.out.println("1. EUR (Euro)");
+        System.out.println("2. GBP (British Pound)");
+        System.out.println("3. INR (Indian Rupee)");
+        
+        System.out.print("Enter your choice (1/2/3): ");
+        int choice = scanner.nextInt();
+        
+        double convertedAmount = 0.0;
+        
+        // Perform conversion based on user's choice
+        switch(choice) {
+            case 1:
+                convertedAmount = amountInUSD * usdToEur;
+                System.out.println(amountInUSD + " USD = " + convertedAmount + " EUR");
+                break;
+            case 2:
+                convertedAmount = amountInUSD * usdToGbp;
+                System.out.println(amountInUSD + " USD = " + convertedAmount + " GBP");
+                break;
+            case 3:
+                convertedAmount = amountInUSD * usdToInr;
+                System.out.println(amountInUSD + " USD = " + convertedAmount + " INR");
+                break;
+            default:
+                System.out.println("Invalid choice. Please select a valid option.");
+        }
+
+        scanner.close(); // Close the scanner
+    }
+}
+
+
